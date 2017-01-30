@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="git," />
+  <meta name="keywords" content="github," />
 
 
 
@@ -84,18 +84,16 @@
 
 
 
-<meta name="description" content="慢慢整理补全">
+<meta name="description" content="开启Github两步验证之后，在Terminal使用SSH进行Clone等操作都还正常，使用HTTPS进行操作则会提示输入Password，这个时候输入Password却始终提示验证失败。其实，仔细阅读Github关于2FA的说明后，发现这个时候Terminal所提示的Password并不是真正意义上用户用户登录GitHub的Password，而是Personal Access Token(对于H">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git Cheat Sheet">
-<meta property="og:url" content="http://yoursite.com/2017/01/30/Git-Cheat-Sheet/index.html">
+<meta property="og:title" content="Github开启两步验证">
+<meta property="og:url" content="http://yoursite.com/2017/01/30/Github开启两步验证/index.html">
 <meta property="og:site_name" content="Zhigong's Blog">
-<meta property="og:description" content="慢慢整理补全">
-<meta property="og:image" content="http://yoursite.com/2017/01/30/Git-Cheat-Sheet/GitCheatSheet.png">
-<meta property="og:updated_time" content="2017-01-30T04:47:22.000Z">
+<meta property="og:description" content="开启Github两步验证之后，在Terminal使用SSH进行Clone等操作都还正常，使用HTTPS进行操作则会提示输入Password，这个时候输入Password却始终提示验证失败。其实，仔细阅读Github关于2FA的说明后，发现这个时候Terminal所提示的Password并不是真正意义上用户用户登录GitHub的Password，而是Personal Access Token(对于H">
+<meta property="og:updated_time" content="2017-01-30T08:29:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git Cheat Sheet">
-<meta name="twitter:description" content="慢慢整理补全">
-<meta name="twitter:image" content="http://yoursite.com/2017/01/30/Git-Cheat-Sheet/GitCheatSheet.png">
+<meta name="twitter:title" content="Github开启两步验证">
+<meta name="twitter:description" content="开启Github两步验证之后，在Terminal使用SSH进行Clone等操作都还正常，使用HTTPS进行操作则会提示输入Password，这个时候输入Password却始终提示验证失败。其实，仔细阅读Github关于2FA的说明后，发现这个时候Terminal所提示的Password并不是真正意义上用户用户登录GitHub的Password，而是Personal Access Token(对于H">
 
 
 
@@ -123,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/01/30/Git-Cheat-Sheet/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/01/30/Github开启两步验证/"/>
 
 
 
 
 
-  <title> Git Cheat Sheet | Zhigong's Blog </title>
+  <title> Github开启两步验证 | Zhigong's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -261,7 +259,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/30/Git-Cheat-Sheet/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/30/Github开启两步验证/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Zhigong Li">
@@ -285,7 +283,7 @@
             
             
               
-                Git Cheat Sheet
+                Github开启两步验证
               
             
           </h1>
@@ -300,7 +298,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-30T12:33:08+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-30T16:06:32+08:00">
                 2017-01-30
               </time>
             
@@ -319,8 +317,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/30/Git-Cheat-Sheet/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/30/Git-Cheat-Sheet/" itemprop="commentCount"></span>
+                <a href="/2017/01/30/Github开启两步验证/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/30/Github开启两步验证/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -346,7 +344,13 @@
       
 
       
-        <p>慢慢整理补全<br><img src="/2017/01/30/Git-Cheat-Sheet/GitCheatSheet.png" alt="Git Cheat Sheet" title="Git Cheat Sheet"></p>
+        <p>开启Github两步验证之后，在Terminal使用SSH进行Clone等操作都还正常，使用HTTPS进行操作则会提示输入Password，这个时候输入Password却始终提示验证失败。其实，仔细阅读<a href="https://help.github.com/articles/providing-your-2fa-authentication-code/" target="_blank" rel="external">Github关于2FA的说明后</a>，发现这个时候Terminal所提示的Password并不是真正意义上用户用户登录GitHub的Password，而是Personal Access Token(对于HTTPS)或者Passphrase (对于SSH)。</p>
+<blockquote><p>After 2FA is enabled there are a couple of scenarios where you need to enter a personal access token instead of a 2FA code and your GitHub password.</p>
+<h4 id="Through-the-command-line"><a href="#Through-the-command-line" class="headerlink" title="Through the command line"></a>Through the command line</h4><p>You must create a personal access token to use as a password when authenticating to GitHub on the command line using HTTPS URLs.</p>
+<p>For example, when you access a repository using Git on the command line using commands like <code>git clone</code>, <code>git fetch</code>, <code>git pull</code> or <code>git push</code> with HTTPS URLs, you must provide your GitHub username and your personal access token when prompted for a username and password. The command line prompt won’t specify that you should enter your personal access token when it asks for your password.</p>
+<h4 id="2FA-and-Subversion-svn-command-line-tortoise-svn-etc"><a href="#2FA-and-Subversion-svn-command-line-tortoise-svn-etc" class="headerlink" title="2FA and Subversion (svn command line, tortoise svn, etc)"></a>2FA and Subversion (svn command line, tortoise svn, etc)</h4><p>When you access a repository via Subversion, you must provide a personal access token instead of entering your password.</p>
+<footer><strong>Github Help,</strong><cite><a href="https://help.github.com/articles/providing-your-2fa-authentication-code/" target="_blank" rel="external">help.github.com/articles/providing-your-2fa-authentication-code</a></cite></footer></blockquote>
+<p>不过我生成SSH key的时候并没有使用Passphrase,所以使用Passphrase的情况并未试验过。而<a href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/" target="_blank" rel="external">生成Personal Access Token</a>后，则在Terminal中成功地验证。</p>
 
       
     </div>
@@ -370,7 +374,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag"># git</a>
+            <a href="/tags/github/" rel="tag"># github</a>
           
         </div>
       
@@ -379,8 +383,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/11/Vagrant-can-not-mount-shared-folder-in-VirtualBox/" rel="next" title="Vagrant Can Not Mount Shared Folder in VirtualBox">
-                <i class="fa fa-chevron-left"></i> Vagrant Can Not Mount Shared Folder in VirtualBox
+              <a href="/2017/01/30/Git-Cheat-Sheet/" rel="next" title="Git Cheat Sheet">
+                <i class="fa fa-chevron-left"></i> Git Cheat Sheet
               </a>
             
           </div>
@@ -388,10 +392,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/30/Github开启两步验证/" rel="prev" title="Github开启两步验证">
-                Github开启两步验证 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -445,8 +445,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/Li.png"
@@ -495,6 +504,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Through-the-command-line"><span class="nav-number">1.</span> <span class="nav-text">Through the command line</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2FA-and-Subversion-svn-command-line-tortoise-svn-etc"><span class="nav-number">2.</span> <span class="nav-text">2FA and Subversion (svn command line, tortoise svn, etc)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
@@ -621,9 +646,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'zhigong';
-      var disqus_identifier = '2017/01/30/Git-Cheat-Sheet/';
+      var disqus_identifier = '2017/01/30/Github开启两步验证/';
 
-      var disqus_title = "Git Cheat Sheet";
+      var disqus_title = "Github开启两步验证";
 
 
       function run_disqus_script(disqus_script) {
